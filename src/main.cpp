@@ -4,15 +4,24 @@
 BluetoothSerial ESP_BT;
 
 #define LED_PIN 2  // GPIO2
+const int LED_BT = 4; //GPIO4
+
 
 void setup() {
   Serial.begin(115200);
-  ESP_BT.begin("ESP32_LED_CONTROL"); // Nome do dispositivo Bluetooth
-
+  
   pinMode(LED_PIN, OUTPUT);
+  pinMode(LED_BT, OUTPUT);
   digitalWrite(LED_PIN, LOW);
 
-  Serial.println("Bluetooth iniciado. Aguardando comandos...");
+  if (ESP_BT.begin("ESP32_LED_CONTROL")) {
+    Serial.println("✅ Bluetooth iniciado!");
+    digitalWrite(LED_BT, HIGH);   // Liga o LED no pino 4
+  } else {
+    Serial.println("❌ Falha ao iniciar Bluetooth!");
+    digitalWrite(LED_BT, LOW);    // LED apagado
+  }
+
 }
 
 void loop() {
