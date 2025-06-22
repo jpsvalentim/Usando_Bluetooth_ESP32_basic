@@ -23,6 +23,9 @@ Este projeto permite o controle de um LED conectado ao ESP32 utilizando comunica
 ESP32	Componente
 GPIO 4	LED (com resistor de 220Ω)
 GPIO 2	LED (com resistor de 220Ω)
+![image](https://github.com/user-attachments/assets/53c08e62-6997-4341-bb13-625835af1c13)
+![01](https://github.com/user-attachments/assets/38042fd8-35fc-4e60-9a04-05d24e2b11e4)
+
 
 
 ## 🧠 Funcionalidades
