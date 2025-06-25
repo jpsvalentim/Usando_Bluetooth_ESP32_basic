@@ -24,7 +24,7 @@ void setup() {
 
 }
 
-void loop() {
+void BLE(){
   if (ESP_BT.available()) {
     String command = ESP_BT.readStringUntil('\n');
     command.trim(); // remove espaços e quebras
@@ -43,4 +43,12 @@ void loop() {
       ESP_BT.println("Comando inválido!");
     }
   }
+
 }
+
+
+void loop() {
+ BLE();
+}
+
+
